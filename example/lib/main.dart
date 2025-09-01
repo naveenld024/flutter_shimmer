@@ -43,7 +43,8 @@ class _ShimmerDemoPageState extends State<ShimmerDemoPage> {
       if (mounted) setState(() => _loading = false);
     });
   }
-   void _refresh() {
+
+  void _refresh() {
     setState(() => _loading = true);
     _simulateLoading();
   }
@@ -122,7 +123,7 @@ class _ShimmerDemoPageState extends State<ShimmerDemoPage> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),

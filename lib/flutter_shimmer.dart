@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 /// A widget that automatically applies a shimmer effect to its child widget.
-/// 
+///
 /// The shimmer effect creates a smooth, animated gradient that moves across the child,
 /// commonly used to indicate loading states or placeholder content. The effect can be
 /// controlled through various parameters including duration, colors, and visibility.
-/// 
+///
 /// ## Features:
 /// - **Automatic animation**: Starts and stops based on the `showShimmer` parameter
 /// - **Customizable colors**: Configure base and highlight colors for the shimmer effect
 /// - **Adjustable duration**: Control the speed of the shimmer animation
 /// - **Border radius preservation**: Attempts to maintain the child's border radius
 /// - **Performance optimized**: Uses efficient animation controllers and shader masks
-/// 
+///
 /// ## Usage:
 /// ```dart
 /// AutoShimmer(
@@ -26,7 +26,7 @@ import 'package:flutter/material.dart';
 ///   ),
 /// )
 /// ```
-/// 
+///
 /// ## Parameters:
 /// - [child]: The widget to apply the shimmer effect to
 /// - [duration]: The duration of one complete shimmer cycle (default: 2 seconds)
@@ -36,34 +36,34 @@ import 'package:flutter/material.dart';
 class AutoShimmer extends StatefulWidget {
   /// The widget to apply the shimmer effect to.
   final Widget child;
-  
+
   /// The duration of one complete shimmer cycle.
-  /// 
+  ///
   /// This controls how fast the shimmer effect moves across the widget.
   /// Defaults to 2 seconds.
   final Duration duration;
-  
+
   /// The base color of the shimmer effect.
-  /// 
+  ///
   /// This is the darker color in the gradient that creates the shimmer effect.
   /// Defaults to a light gray color.
   final Color baseColor;
-  
+
   /// The highlight color of the shimmer effect.
-  /// 
+  ///
   /// This is the brighter color in the gradient that creates the shimmer effect.
   /// Defaults to a lighter gray color.
   final Color highlightColor;
-  
+
   /// Whether to show the shimmer effect.
-  /// 
+  ///
   /// When `false`, the widget simply returns the child without any shimmer effect.
   /// When `true`, the shimmer animation is active.
   /// Defaults to `true`.
   final bool showShimmer;
 
   /// Creates an AutoShimmer widget.
-  /// 
+  ///
   /// The [child] parameter is required and represents the widget that will
   /// receive the shimmer effect.
   const AutoShimmer({
@@ -80,7 +80,7 @@ class AutoShimmer extends StatefulWidget {
 }
 
 /// The state class for [AutoShimmer].
-/// 
+///
 /// Manages the animation controller and handles the shimmer effect rendering.
 class _AutoShimmerState extends State<AutoShimmer>
     with SingleTickerProviderStateMixin {
@@ -91,10 +91,7 @@ class _AutoShimmerState extends State<AutoShimmer>
   void initState() {
     super.initState();
     // Initialize the animation controller with the specified duration
-    _controller = AnimationController(
-      vsync: this,
-      duration: widget.duration,
-    );
+    _controller = AnimationController(vsync: this, duration: widget.duration);
     // Start the shimmer animation if showShimmer is true
     if (widget.showShimmer) {
       _controller.repeat();
@@ -157,11 +154,11 @@ class _AutoShimmerState extends State<AutoShimmer>
   }
 
   /// Attempts to extract the border radius from the child widget.
-  /// 
+  ///
   /// This method tries to preserve the border radius of the child widget
   /// by examining common widget patterns like Container with BoxDecoration.
   /// If no border radius can be determined, it defaults to BorderRadius.zero.
-  /// 
+  ///
   /// [child] is the widget to examine for border radius information.
   /// Returns a BorderRadiusGeometry that should be applied to the shimmer effect.
   BorderRadiusGeometry _getBorderRadius(Widget? child) {
@@ -172,7 +169,7 @@ class _AutoShimmerState extends State<AutoShimmer>
         return decoration.borderRadius ?? BorderRadius.zero;
       }
     }
-    
+
     // Default to zero if we can't determine the border radius
     return BorderRadius.zero;
   }
