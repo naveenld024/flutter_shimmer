@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shimmer/flutter_auto_shimmer.dart';
-   
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
