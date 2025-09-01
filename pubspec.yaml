@@ -1,7 +1,9 @@
 name: flutter_shimmer
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/naveenld024/flutter_shimmer
+repository: https://github.com/naveenld024/flutter_shimmer
+issue_tracker: https://github.com/naveenld024/flutter_shimmer/issues
 
 environment:
   sdk: ^3.9.0
