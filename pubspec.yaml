@@ -1,6 +1,6 @@
 name: flutter_auto_shimmer
 description: "Tiny, dependency‑free shimmer effect for any widget. Wrap your widget with AutoShimmer to get a smooth, animated loading state with preserved border radii and customizable colors."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/naveenld024/flutter_shimmer
 repository: https://github.com/naveenld024/flutter_shimmer
 issue_tracker: https://github.com/naveenld024/flutter_shimmer/issues
